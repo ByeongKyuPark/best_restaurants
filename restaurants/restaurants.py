@@ -45,20 +45,23 @@ print("\nMost Popular Cuisine Type in the Top 10 List:")
 print(popular_cuisine)
 
 
-#---------plots-----------
-## Plotting the average ratings of the top 10 restaurants (optional)
-#plt.figure(figsize=(10, 6))
-#sns.barplot(data=top_10, x='name', y='rating')
-#plt.xticks(rotation=45)
-#plt.title('Average Ratings of Top 10 Restaurants')
-#plt.ylabel('Average Rating')
-#plt.xlabel('Restaurant Name')
-#plt.show()
+# Merge top_10 with locations and cuisines
+top_10_with_details = top_10.merge(locations, on='placeID').merge(cuisines, on='placeID')
 
-## Plotting the count of each cuisine type in the top 10 list (optional)
-#plt.figure(figsize=(10, 6))
-#sns.countplot(data=top_10, x='cuisine')
-#plt.title('Count of Each Cuisine Type in Top 10 Restaurants')
-#plt.ylabel('Count')
-#plt.xlabel('Cuisine Type')
-#plt.show()
+# Plotting the average ratings of the top 10 restaurants
+plt.figure(figsize=(10, 6))
+sns.barplot(data=top_10_with_details, x='name', y='rating')
+plt.xticks(rotation=45)
+plt.title('Average Ratings of Top 10 Restaurants')
+plt.ylabel('Average Rating')
+plt.xlabel('Restaurant Name')
+plt.show()
+
+# Plotting the count of each cuisine type in the top 10 list
+plt.figure(figsize=(10, 6))
+sns.countplot(data=top_10_with_details, x='cuisine')
+plt.title('Count of Each Cuisine Type in Top 10 Restaurants')
+plt.xticks(rotation=45)  # Rotate the x labels for better readability
+plt.ylabel('Count')
+plt.xlabel('Cuisine Type')
+plt.show()
