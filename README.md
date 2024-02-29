@@ -1,5 +1,7 @@
 # Top 10 Restaurants Analysis
 
+Upon analyzing the "TripAdvisor Restaurant Recommendation Data (Washington)" from Kaggle, I applied rigorous data wrangling techniques to clean and merge the dataset, focusing on identifying the top-rated restaurants based on customer feedback. This process involved filtering out restaurants with insufficient ratings and calculating average scores to pinpoint the best dining options. The results of my analysis revealed a list of the top restaurants in Washington, guiding my culinary exploration in the city with data-driven recommendations !.
+
 This Python script provides an analysis of restaurant data, focusing on identifying and visualizing the top 10 rated restaurants based on customer ratings. It utilizes Pandas for data manipulation, Matplotlib, and Seaborn for data visualization.
 
 ## Features
